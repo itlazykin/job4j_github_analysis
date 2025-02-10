@@ -6,4 +6,6 @@
 		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
     <include file="classpath:db/scripts/001_ddl_create_table_repositories.xml"/>
     <include file="classpath:db/scripts/002_ddl_alter_table_commits.xml"/>
+    <include file="classpath:db/scripts/003_ddl_alter_table_commits_add_column_sha.xml"/>
+    <include file="classpath:db/scripts/004_ddl_alter_table_repositories_add_column_username.xml"/>
 </databaseChangeLog>
