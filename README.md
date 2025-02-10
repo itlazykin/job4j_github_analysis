@@ -1,3 +1,5 @@
+![Build Status](https://github.com/itlazykin/job4j_github_analysis/actions/workflows/maven.yml/badge.svg)
+
 # Spring Boot GitHub Data Analysis
 
 Это Spring Boot приложение для анализа данных с GitHub. Оно регулярно собирает информацию о репозиториях и коммитах, используя GitHub API, и сохраняет эти данные в базе данных PostgreSQL.
