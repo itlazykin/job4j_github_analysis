@@ -18,7 +18,9 @@ public class Commit {
 
     private String author;
 
-    private LocalDateTime date;
+    private LocalDateTime date = LocalDateTime.now();
+
+    private String sha;
 
     @ManyToOne
     @JoinColumn(name = "repository_id")

@@ -15,4 +15,6 @@ public class Repository {
     private String name;
 
     private String url;
+
+    private String userName;
 }
