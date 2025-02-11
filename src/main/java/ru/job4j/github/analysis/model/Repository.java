@@ -11,10 +11,7 @@ public class Repository {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     private String url;
-
-    private String userName;
+    private String username;
 }
