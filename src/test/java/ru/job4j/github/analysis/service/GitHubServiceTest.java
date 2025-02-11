@@ -68,7 +68,7 @@ class GitHubServiceTest {
                 any(),
                 any(ParameterizedTypeReference.class)
         )).thenReturn(new ResponseEntity<>(mockResponse, HttpStatus.OK));
-        var commits = gitHubService.fetchNewCommits(owner, repoName, sha);
+        var commits = gitHubService.fetchCommits(owner, repoName, sha);
         assertThat(commits).hasSize(1);
         assertThat(commits.get(0).getMessage()).isEqualTo("Initial commit");
     }
@@ -101,7 +101,7 @@ class GitHubServiceTest {
                 any(),
                 any(ParameterizedTypeReference.class)
         )).thenReturn(new ResponseEntity<>(mockResponse, HttpStatus.OK));
-        var commits = gitHubService.fetchNewCommits(owner, repoName, sha);
+        var commits = gitHubService.fetchCommits(owner, repoName, sha);
         assertThat(commits).isEmpty();
     }
 }
