@@ -1,6 +1,5 @@
 package ru.job4j.github.analysis.service;
 
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -13,7 +12,6 @@ import ru.job4j.github.analysis.model.Repository;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class GitHubService {
 
     @Autowired
@@ -23,30 +21,25 @@ public class GitHubService {
         String url = "https://api.github.com/users/" + username + "/repos";
         ResponseEntity<List<Repository>> response = restTemplate.exchange(
                 url, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<Repository>>() {
-                }
-        );
+                new ParameterizedTypeReference<List<Repository>>() { });
         return response.getBody();
     }
 
-    public List<Commit> fetchCommits(String repoName) {
-        String url = "https://api.github.com/repos/" + repoName + "/commits";
+    public List<Commit> fetchCommits(String repository) {
+        String url = "https://api.github.com/repos/" + repository + "/commits";
         ResponseEntity<List<Commit>> response = restTemplate.exchange(
                 url, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<Commit>>() {
-
-                }
-        );
+                new ParameterizedTypeReference<List<Commit>>() { });
         return response.getBody();
     }
 
-    public List<Commit> fetchNewCommits(String owner, String repoName, String sha) {
-        String url = String.format("https://api.github.com/repos/%s/%s/commits?sha=%s", owner, repoName, sha);
+    public List<Commit> fetchCommits(String owner, String repository, String sha) {
+        String url = String.format(
+                "https://api.github.com/repos/%s/%s/commits?sha=%s", owner, repository, sha
+        );
         ResponseEntity<List<Commit>> response = restTemplate.exchange(
                 url, HttpMethod.GET, null,
-                new ParameterizedTypeReference<List<Commit>>() {
-                }
-        );
+                new ParameterizedTypeReference<List<Commit>>() { });
         return response.getBody();
     }
 }
