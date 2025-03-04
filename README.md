@@ -40,3 +40,8 @@ cd job4j_github_analysis
 
 mvn spring-boot:run
 ```
+
+#### Контакты для связи:
+* Лазыкин Денис Андреевич;
+* +7 926 888 23 28;
+* dlazykin856@gmail.com
